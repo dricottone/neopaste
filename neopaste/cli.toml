@@ -1,0 +1,24 @@
+[center]
+number = 0
+alternatives = ['c']
+
+[delimiter]
+number = 1
+alternatives = ['d']
+
+[help]
+number = 0
+alternatives = ['h', 'x']
+
+[left]
+number = 0
+alternatives = ['l']
+
+[right]
+number = 0
+alternatives = ['r']
+
+[version]
+number = 0
+alternatives = ['v', 'V']
+
