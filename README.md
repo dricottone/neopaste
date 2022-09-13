@@ -3,6 +3,7 @@
 Paste file streams side-by-side, without concern for Unicode wide characters or
 ANSI color codes.
 
+
 ### Usage
 
 ```
@@ -41,8 +42,6 @@ Filesystem      Size  Used Avail Use% Mounted on        June 2020       Weather 
                                                   28 29 30                   ʻ ʻ ʻ ʻ   0.0 in/h
 ```
 
-----
-
 
 ## Dependencies
 
@@ -52,9 +51,7 @@ manage runtime dependencies for you.
 The only runtime dependency is **wcwidth**, available from PyPI through pip.
 
 Testing and build dependencies are **setuptools** and
-[gap](https://git.dominic-ricottone.com/gap).
-
-----
+[gap](https://git.dominic-ricottone.com/~dricottone/gap).
 
 
 ## Licensing

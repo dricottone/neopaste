@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neopaste"
+description = "Paste file streams side-by-side"
+readme = "README.md"
+version = "1.0.1"
+authors = [ { name = "Dominic Ricottone", email = "me@dominic-ricottone.com" } ]
+urls = { source = "git.dominic-ricottone.com/~dricottone/neopaste" }
+license = { file = "LICENSE.md" }
+requires-python = ">=3.6"
+dependencies = [
+    "wcwidth >= 0.2.4",
+]
+
+[project.scripts]
+npaste = "neopaste.__main__:main"
+
