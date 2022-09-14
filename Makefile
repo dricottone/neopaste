@@ -1,4 +1,4 @@
-VERSION=1.0.1
+VERSION=1.0.2
 
 PY_COMPILE_BIN=python -m py_compile
 
@@ -11,7 +11,7 @@ UNITTEST_FILE_BIN=unittest --color
 UNITTEST_DIR_BIN=unittest --color --working-directory .
 
 #MYPY_BIN=python -m mypy
-MYPY_BIN=MYPY_CACHE_DIR=gap/__mypycache__ mypy
+MYPY_BIN=MYPY_CACHE_DIR=neopaste/__mypycache__ mypy
 
 #PIPX_BIN=python -m pipx
 PIPX_BIN=pipx
@@ -25,7 +25,7 @@ neopaste/cli.py: neopaste/cli.toml
 
 .PHONY: test
 test:
-	$(PY_COMPILE_BIN) gap/*.py
+	$(PY_COMPILE_BIN) neopaste/*.py
 
 PY_FILES=neopaste/cli.py neopaste/__main__.py neopaste/columnar.py neopaste/internals.py
 PYBUILD_FILES=pyproject.toml LICENSE.md README.md

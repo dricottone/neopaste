@@ -3,7 +3,7 @@
 import sys
 from typing import *
 
-VERSION = (1,0,0,)
+VERSION = (1,0,2,)
 
 def _read_stdin() -> Iterator[str]:
     try:
