@@ -45,13 +45,8 @@ Filesystem      Size  Used Avail Use% Mounted on        June 2020       Weather 
 
 ## Dependencies
 
-My recommendation is to install this software through **pipx**, which will
-manage runtime dependencies for you.
-
-The only runtime dependency is **wcwidth**, available from PyPI through pip.
-
-Testing and build dependencies are **setuptools** and
-[gap](https://git.dominic-ricottone.com/~dricottone/gap).
+Depends on wcwidth and my other project
+[gap](https://git.sr.ht/~dricottone/gap).
 
 
 ## Licensing

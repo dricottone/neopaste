@@ -6,9 +6,9 @@ build-backend = "setuptools.build_meta"
 name = "neopaste"
 description = "Paste file streams side-by-side"
 readme = "README.md"
-version = "1.0.2"
+version = "1.0.3"
 authors = [ { name = "Dominic Ricottone", email = "me@dominic-ricottone.com" } ]
-urls = { source = "git.dominic-ricottone.com/~dricottone/neopaste" }
+urls = { source = "git.sr.ht/~dricottone/neopaste" }
 license = { file = "LICENSE.md" }
 requires-python = ">=3.6"
 dependencies = [

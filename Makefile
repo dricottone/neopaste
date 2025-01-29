@@ -1,50 +1,27 @@
-VERSION=1.0.2
+VERSION=1.0.3
+SRC=$(shell find . -type f -name '*.py')
 
-PY_COMPILE_BIN=python -m py_compile
-
-#BUILD_BIN=python -m build
-BUILD_BIN=pyproject-build
-
-#UNITTEST_FILE_BIN=python -m unittest
-#UNITTEST_DIR_BIN=python -m unittest discover --top-level-directory .
-UNITTEST_FILE_BIN=unittest --color
-UNITTEST_DIR_BIN=unittest --color --working-directory .
-
-#MYPY_BIN=python -m mypy
-MYPY_BIN=MYPY_CACHE_DIR=neopaste/__mypycache__ mypy
-
-#PIPX_BIN=python -m pipx
-PIPX_BIN=pipx
-
-.PHONY: clean
 clean:
-	rm -rf **/__pycache__ **/__mypycache__ **/*.pyc build *.egg-info
+	rm -rf **/__pycache__ **/__mypycache__ **/*.pyc dist build *.egg-info
 
 neopaste/cli.py: neopaste/cli.toml
 	gap neopaste/cli.toml -o neopaste/cli.py
 
-.PHONY: test
 test:
-	$(PY_COMPILE_BIN) neopaste/*.py
+	python -m py_compile neopaste/*.py
 
-PY_FILES=neopaste/cli.py neopaste/__main__.py neopaste/columnar.py neopaste/internals.py
 PYBUILD_FILES=pyproject.toml LICENSE.md README.md
 
-build/neopaste-$(VERSION)-py3-none-any.whl: $(PY_FILES) $(PYBUILD_FILES)
-	mkdir -p build
-	$(BUILD_BIN) --wheel --no-isolation --outdir build/
+dist/neopaste-$(VERSION)-py3-none-any.whl: $(SRC) neopaste/cli.py $(PYBUILD_FILES)
+	mkdir -p dist
+	pyproject-build --wheel --no-isolation
 
-.PHONY: build
-build: build/neopaste-$(VERSION)-py3-none-any.whl
+build: dist/neopaste-$(VERSION)-py3-none-any.whl
 
-.PHONY: reinstall
-reinstall: uninstall install
+install: dist/neopaste-$(VERSION)-py3-none-any.whl
+	pipx install build/neopaste-$(VERSION)-py3-none-any.whl
 
-.PHONY: install
-install: build/neopaste-$(VERSION)-py3-none-any.whl
-	$(PIPX_BIN) install build/neopaste-$(VERSION)-py3-none-any.whl
-
-.PHONY: uninstall
 uninstall:
 	pipx uninstall neopaste
 
+.PHONY: clean test build install uninstall
