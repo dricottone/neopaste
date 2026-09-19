@@ -46,7 +46,7 @@ Filesystem      Size  Used Avail Use% Mounted on        June 2020       Weather 
 ## Dependencies
 
 Depends on wcwidth and my other project
-[gap](https://git.sr.ht/~dricottone/gap).
+[gap](https://tangled.org/dominic-ricottone.com/gap).
 
 
 ## Licensing
